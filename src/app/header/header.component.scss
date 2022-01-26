@@ -1,0 +1,30 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: solid black 4px;
+    height: 20vh;
+    width: 100%;
+}
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 40px;
+    padding: 25px;
+    // background-color: red;
+}
+
+a {
+    font-size: 2em;
+}
+
+.start {
+    background-color: rgb(242, 174, 28);
+}
