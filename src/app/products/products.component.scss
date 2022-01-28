@@ -1,3 +1,16 @@
+.mutual-funds  {
+    height: 85vh;
+}
+
+.mat-table {
+    overflow: auto;
+    max-height: 600px;
+}
+
 table {
-    width: 100%;
+    width: 90%;
+}
+
+.mat-column-fundName {
+    flex: 0 0 15%;
 }

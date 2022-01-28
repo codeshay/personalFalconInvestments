@@ -1,58 +1,23 @@
 <div class="mutual-funds">
     <h1>Mutual Funds</h1>
 
-    <div *ngFor="let mutualFund of mutualFunds">
+    <!-- <div *ngFor="let mutualFund of mutualFunds">
         <a class="accounts">{{mutualFund.fundName}}</a>
         <a>{{mutualFund.symbol}}</a>
-    </div>
+    </div> -->
 
- 
-    <!-- <mat-table [dataSource]="mutualFunds" class="mat-elevation-z8">
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-        <ng-container matColumnDef="position">
-        <mat-header-cell *matHeaderCellDef> Fund Name </mat-header-cell>
-        <mat-cell *matCellDef="let mutualFund"> {{mutualFund.fundName}} </mat-cell>
-        </ng-container>
-    
-        <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-        <mat-cell *matCellDef="let mutualFund"> {{mutualFund.symbol}} </mat-cell>
-        </ng-container>
-    
-        <mat-header-row *matHeaderRowDef="mutualFunds"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: mutualFunds;"></mat-row>
-    </mat-table> -->
-
-    <!-- <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-        <ng-container matColumnDef="fundName">
-        <mat-header-cell *matHeaderCellDef> Fund Name </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.fundName}} </mat-cell>
-        </ng-container>
-    
-        <ng-container matColumnDef="symbol">
-        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+        <ng-container *ngFor="let column of columns" [matColumnDef]="column.columnDef">
+        <mat-header-cell *matHeaderCellDef> {{column.header}} </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{column.cell(row)}} </mat-cell>
         </ng-container>
     
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    </mat-table> -->
-
-    <!-- <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-        <ng-container *ngFor="let mutualFund of mutualFunds">
-        <mat-header-cell *matHeaderCellDef> Fund Name </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{mutualFund.fundName}} </mat-cell>
-        </ng-container>
-    
-        <ng-container *ngFor="let mutualFund of mutualFunds">
-        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{mutualFund.symbol}} </mat-cell>
-        </ng-container>
-    
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    </mat-table> -->
-
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" 
+                   showFirstLastButtons
+                   aria-label="Select page of mutual funds">
+    </mat-paginator>
 </div>

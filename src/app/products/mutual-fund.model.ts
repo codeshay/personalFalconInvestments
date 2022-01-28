@@ -11,5 +11,5 @@ export interface MutualFund {
     expenseRation?: number,
     nAV?: number,
     risk?: number,
-    min?: number
+    minimum?: number
 }
